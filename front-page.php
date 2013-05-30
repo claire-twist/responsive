@@ -61,14 +61,22 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
 				?>
 			</h1>
 			
-			<h2 class="featured-subtitle">
+
+			
 				<?php
-				if ( isset( $responsive_options['home_subheadline'] ) && $db && $empty )
-					echo $responsive_options['home_subheadline'];
-				else
-					_e( 'Your H2 subheadline here', 'responsive' );
+				if ( isset( $responsive_options['home_subheadline'] ) && $db && $empty ) {
+                    echo '<h2 class="featured-subtitle">';
+                    echo $responsive_options['home_subheadline'];
+                    echo '</h2>';
+                }
+
+				else {
+                    echo '<h2 class="featured-subtitle">';
+                    _e( 'Your H2 subheadline here', 'responsive' );
+                    echo '</h2>';
+                }
+
 				?>
-			</h2>
 			
 			<p>
 				<?php
@@ -94,7 +102,7 @@ if ( 'posts' == get_option( 'show_on_front' ) && $responsive_options['front_page
 				
 				</div><!-- end of .call-to-action -->
 
-			<?php endif; ?>         
+			<?php endif; ?>    
 			
 		</div><!-- end of .col-460 -->
 

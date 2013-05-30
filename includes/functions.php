@@ -48,7 +48,7 @@ function responsive_get_options() {
 function responsive_get_option_defaults() {
   $defaults = array(
     'breadcrumb' => false,
-    'cta_button' => false,
+    'cta_button' => 0,
     'front_page' => 1,
     'home_headline' => false,
     'home_subheadline' => false,
@@ -171,15 +171,15 @@ if (!function_exists('responsive_setup')):
 	        // Header image default
 	       'default-image'			=> get_template_directory_uri() . '/images/default-logo.png',
 	        // Header text display default
-	       'header-text'			=> false,
+	       'header-text'			=> 'betting preview',
 	        // Header image flex width
 		   'flex-width'             => true,
 	        // Header image width (in pixels)
-	       'width'				    => 300,
+	       'width'				    => 193,
 		    // Header image flex height
 		   'flex-height'            => true,
 	        // Header image height (in pixels)
-	       'height'			        => 100,
+	       'height'			        => 130,
 	        // Admin header style callback
 	       'admin-head-callback'	=> 'responsive_admin_header_style'));
 		   
@@ -206,7 +206,7 @@ if (!function_exists('responsive_setup')):
         define('HEADER_IMAGE', '%s/images/default-logo.png'); // %s is the template dir uri
         define('HEADER_IMAGE_WIDTH', 300); // use width and height appropriate for your theme
         define('HEADER_IMAGE_HEIGHT', 100);
-        define('NO_HEADER_TEXT', true);
+        define('HEADER_TEXT', 'preview');
 		
 		
 		// gets included in the admin header
@@ -760,6 +760,39 @@ endif;
             'description' => __('Area 8 - sidebar-home.php', 'responsive'),
             'id' => 'home-widget-3',
             'before_title' => '<div id="widget-title-three" class="widget-title-home"><h3>',
+            'after_title' => '</h3></div>',
+            'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
+            'after_widget' => '</div>'
+        ));
+
+
+        register_sidebar(array(
+            'name' => __('Home Widget 4', 'responsive'),
+            'description' => __('Area 12 - sidebar-home.php', 'responsive'),
+            'id' => 'home-widget-4',
+            'before_title' => '<div id="widget-title-four" class="widget-title-home"><h3>',
+            'after_title' => '</h3></div>',
+            'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
+            'after_widget' => '</div>'
+        ));
+
+
+        register_sidebar(array(
+            'name' => __('Home Widget 5', 'responsive'),
+            'description' => __('Area 13 - sidebar-home.php', 'responsive'),
+            'id' => 'home-widget-5',
+            'before_title' => '<div id="widget-title-five" class="widget-title-home"><h3>',
+            'after_title' => '</h3></div>',
+            'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
+            'after_widget' => '</div>'
+        ));
+
+
+        register_sidebar(array(
+            'name' => __('Home Widget 6', 'responsive'),
+            'description' => __('Area 14 - sidebar-home.php', 'responsive'),
+            'id' => 'home-widget-6',
+            'before_title' => '<div id="widget-title-six" class="widget-title-home"><h3>',
             'after_title' => '</h3></div>',
             'before_widget' => '<div id="%1$s" class="widget-wrapper %2$s">',
             'after_widget' => '</div>'
